@@ -4,6 +4,10 @@ Project: Jupiter Trigger Lab
 
 Repo: https://github.com/grantf04/jupiter-trigger-lab
 
+Live app: https://grantf04.github.io/jupiter-trigger-lab/
+
+Demo screenshot: https://github.com/grantf04/jupiter-trigger-lab/blob/main/docs-demo.png
+
 ## What I Built
 
 Jupiter Trigger Lab is a no-wallet browser app that turns live Jupiter token data into a reviewable Trigger/DCA strategy template. It uses:

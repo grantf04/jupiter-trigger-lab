@@ -12,6 +12,8 @@ It uses live Jupiter data to:
 
 The app never asks for a wallet, never signs transactions, and never uses seed money. It is a planning and developer-experience artifact only.
 
+![Jupiter Trigger Lab live demo](./docs-demo.png)
+
 ## Run
 
 ```bash
