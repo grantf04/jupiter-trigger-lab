@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jupiter Trigger Lab</title>
+    <meta
+      name="description"
+      content="A no-wallet Jupiter API strategy lab for volatility detection, trigger ladder planning, and developer-experience evidence."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-label="Jupiter Trigger Lab">
+        <header class="masthead">
+          <div>
+            <p class="eyebrow">Jupiter Developer Platform experiment</p>
+            <h1>Jupiter Trigger Lab</h1>
+          </div>
+          <div class="status-strip">
+            <span id="runStatus">Ready</span>
+            <button id="refreshBtn" type="button">Run analysis</button>
+          </div>
+        </header>
+
+        <section class="controls" aria-label="Analysis controls">
+          <label>
+            Token symbols or mints
+            <textarea id="tokenInput" spellcheck="false">SOL, JUP, WIF, BONK, USDC</textarea>
+          </label>
+          <label>
+            Notional size
+            <input id="notionalInput" type="number" min="25" step="25" value="500" />
+          </label>
+          <label>
+            Risk band
+            <select id="riskInput">
+              <option value="balanced">Balanced</option>
+              <option value="defensive">Defensive</option>
+              <option value="aggressive">Aggressive</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="metrics" aria-label="Run metrics">
+          <article>
+            <span>Tokens resolved</span>
+            <strong id="resolvedMetric">0</strong>
+          </article>
+          <article>
+            <span>API round trips</span>
+            <strong id="roundTripMetric">0</strong>
+          </article>
+          <article>
+            <span>Median latency</span>
+            <strong id="latencyMetric">0 ms</strong>
+          </article>
+          <article>
+            <span>Best setup</span>
+            <strong id="bestMetric">None</strong>
+          </article>
+        </section>
+
+        <section class="split">
+          <div class="panel">
+            <div class="panel-head">
+              <h2>Opportunity Map</h2>
+              <button id="copyEvidenceBtn" type="button">Copy evidence</button>
+            </div>
+            <div id="tokenTable" class="table" role="table" aria-label="Token analysis table"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head">
+              <h2>Trigger Planner</h2>
+              <button id="copyPlanBtn" type="button">Copy plan</button>
+            </div>
+            <div id="planOutput" class="plan-output" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section class="panel dx-panel">
+          <div class="panel-head">
+            <h2>Developer Experience Notes</h2>
+            <a href="./DX-REPORT.md">Read DX report</a>
+          </div>
+          <ul id="dxNotes">
+            <li>Uses Jupiter Tokens v2 search and Price v3 endpoints directly from the browser.</li>
+            <li>Builds non-custodial strategy templates only. It never asks for a wallet or signs orders.</li>
+            <li>Records endpoint latency, response shape friction, and docs gaps for the report.</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
